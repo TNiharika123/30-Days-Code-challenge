@@ -1,27 +1,57 @@
-from typing import List
+//SOLVED USING C++
 
-def main():
-    # Your code here
-    N, K, X = map(int, input().split())
-    arr = list(map(int,input().split()))
+#include <bits/stdc++.h> // header file includes every Standard library
+using namespace std;
+#define ll long long
+#define all(x) x.begin(), x.end()
 
-    arr.sort(reverse=True)
-    for i in range(N):
-        req = arr[i] // X
-        if req <= K:
-            arr[i] = arr[i] % X
-            K -= req
-        else:
-            if K == 0:
-                break
-            else:
-                arr[i] = arr[i] - (K * X)
-                K = 0
-    arr.sort(reverse=True)
-    ans = 0
-    for i in range(K, N):
-        ans += arr[i]
-    print(ans)
+void solve() {
+ll n, k, x;
+cin >> n >> k >> x;
 
-if __name__ == "__main__":
-    main()
+vector<ll> a(n);
+for (auto &i : a) {
+cin >> i;
+}
+
+sort(a.begin(), a.end());
+reverse(a.begin(), a.end());
+
+ll ans = 0;
+ll curr = 0;
+
+for (auto &i : a) {
+ll req = i / x;
+ll rem = i % x;
+
+if (k >= req) {
+i = rem;
+k -= req;
+} else {
+if (k != 0) {
+i -= k * x;
+k = 0;
+} else {
+break;
+}
+}
+}
+
+sort(all(a));
+reverse(all(a));
+
+ll sum = 0;
+for (int i = k; i < n; i++) {
+sum += a[i];
+}
+
+cout << sum << endl;
+}
+
+int main() {
+// Your code here
+
+solve();
+
+    return 0;
+}
