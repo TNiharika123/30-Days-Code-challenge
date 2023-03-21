@@ -1,0 +1,11 @@
+# Your code here
+n=int(input())
+
+if(n%2!=0):
+    a1=n//2
+    a2=(n+1)//2
+else:
+    a1=(n+1)//2
+    a2=n//2
+
+print(a1*a2)
