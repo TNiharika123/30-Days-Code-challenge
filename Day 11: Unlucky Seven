@@ -1,0 +1,23 @@
+//C++
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+class Main {
+    public static void main (String[] args) {
+        
+    Scanner sc = new Scanner(System.in);
+    int n;
+    n = sc.nextInt();
+    int count = 0;
+
+    for (int i = 1; i <= n; i++) {
+        if (!Integer.toString(i).contains("7") && !Integer.toOctalString(i).contains("7")) {
+            count++;
+        }
+    }
+    
+    System.out.print(count);
+
+    }
+}
