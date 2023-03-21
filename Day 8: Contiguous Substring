@@ -1,0 +1,24 @@
+//C++
+
+#include <bits/stdc++.h> // header file includes every Standard library
+using namespace std;
+
+
+int main() {
+	// Your code here
+    
+        string s,t;
+        cin>>s;
+        cin>>t;
+            bool found = s.find(t) != std::string::npos;
+
+
+    if (found) {
+        std::cout << "Yes" << std::endl;
+    }
+    else {
+        std::cout << "No" << std::endl;
+    }
+    
+    return 0;
+}
