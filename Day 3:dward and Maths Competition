@@ -1,11 +1,18 @@
-# Your code here
-n=int(input())
+#include <stdio.h> // header file for Standard Input Output
+#include <stdlib.h> // header file for Standard Library
 
-if(n%2!=0):
-    a1=n//2
-    a2=(n+1)//2
-else:
-    a1=(n+1)//2
-    a2=n//2
+int main() {
+   int i,j,f=0,n;
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+if(i%2!=0)
+{
+for(j=2;j<=n;j++)
+   if(j%2==0)
+       f++;
+}
+}
+printf("%d",f);
 
-print(a1*a2)
+}
