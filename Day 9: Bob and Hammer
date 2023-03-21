@@ -1,0 +1,25 @@
+//C++
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+void solve()
+{
+    int x,y,z;
+    cin >> x >> y >> z;
+    if((y< 0 and z< 0 and y>z and x <y) or (x>y and y<z and y>0 and z>0))
+       {
+         cout<<-1<<endl;
+         return;
+        }
+         long long T = 0;                                    if((x < 0  and y<0  and x<=y) or (x>0 and y>0 and x>=y))
+         cout << abs(z) + abs(y-z) + abs(y-x) << endl; 
+        else
+         cout<<abs(x)<<endl; 
+  }
+        int main()
+          {
+
+             solve();
+            return 0;
+          }
