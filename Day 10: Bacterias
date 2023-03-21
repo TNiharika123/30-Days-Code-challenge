@@ -1,0 +1,18 @@
+#include <bits/stdc++.h> // header file includes every Standard library
+using namespace std;
+int main() {
+	
+   long long a , b, k;
+    cin >> a >> b >> k;
+
+    long long cnt = 0;
+
+    while(a < b){
+        a *= k;
+        cnt++;
+    }
+
+    cout << cnt ;
+
+    return 0;
+}
