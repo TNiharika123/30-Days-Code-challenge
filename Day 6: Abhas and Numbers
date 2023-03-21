@@ -1,0 +1,34 @@
+// C++ program for the above approach
+
+#include "bits/stdc++.h"
+using namespace std;
+
+// Function to count the number of
+// triplets from the range [1, N - 1]
+// having sum of all pairs divisible by K
+long long int countTriplets(long long int N, long long int K)
+{
+    // If K is even
+    if (K % 2 == 0) {
+        long long int x = N / K;
+        long long int y = (N + (K / 2)) / K;
+
+        return x * x * x + y * y * y;
+    }
+
+    // Otherwise
+    else {
+        long long int x = N / K;
+        return x * x * x;
+    }
+}
+
+// Driver Code
+int main()
+{
+    long long int N,K;
+    cin>>N>>K;
+    cout << countTriplets(N, K);
+
+    return 0;
+}
